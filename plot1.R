@@ -1,3 +1,5 @@
+### Loading the data
+
 data <- read.table("household_power_consumption.txt", sep = ";", na.strings = "?",
 skip=intersect(grep("31/1/2007", readLines("household_power_consumption.txt")),
                grep("23:59:00", readLines("household_power_consumption.txt"))), 
@@ -16,6 +18,9 @@ data$Date <- do.call(paste, data[c(1,2)])
 data$Date <- strptime(data$Date, format = "%Y-%m-%d %H:%M:%S")
 
 data[,2] <- NULL
+
+
+### Constructing the plot
 
 png(file = "plot1.png")
 
