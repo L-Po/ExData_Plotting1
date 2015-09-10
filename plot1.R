@@ -2,7 +2,7 @@
 
 data <- read.table("household_power_consumption.txt", sep = ";", na.strings = "?",
 skip=intersect(grep("31/1/2007", readLines("household_power_consumption.txt")),
-               grep("23:59:00", readLines("household_power_consumption.txt"))), 
+grep("23:59:00", readLines("household_power_consumption.txt"))), 
 nrows=2880)
 
 var_names <- read.table("household_power_consumption.txt", sep = ";", nrows = 1)
